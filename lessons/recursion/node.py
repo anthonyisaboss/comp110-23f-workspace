@@ -22,11 +22,19 @@ class Node:
         else:
             return f"{self.data} -> {self.next}"
         
-    def head(self):
-        return None
+    def head(self) -> int:
+        """Docstring."""
+        return self.data
     
-    def tail(self):
-        return None
+    def tail(self) -> Node | None:
+        """Docstring."""
+        return self.next
     
-    def last(self):
-        return None
+    def last(self) -> int:
+        """Docstring."""
+        current_node = self
+        while current_node.next is not None:
+            current_node = current_node.next
+            
+        return current_node.data
+            
